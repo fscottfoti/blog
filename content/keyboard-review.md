@@ -1,5 +1,5 @@
 Title: My First Review
-Date: 2010-12-03 10:20
-Category: Review
+Date: 2016-12-03
+Category: Quick Thought
 
 Following is a review of my favorite mechanical keyboard.
