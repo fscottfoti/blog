@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = u'Fletcher Foti'
 SITENAME = u'OaklandAnalytics'
 SITEURL = 'http://localhost:8000'
+SITEURL = "https://fscottfoti.github.io/blog"
 
 THEME="./medius"
 

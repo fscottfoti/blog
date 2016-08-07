@@ -26,7 +26,7 @@
                {% if article.cover %}
                <a href="{{ SITEURL }}/{{ article.url }}" class="article-thumbnail article-thumbnail-1" style="background-image:url({{ article.cover }})"><span class="header">{{ article.title }}</span></a>
                {% elif article.thumbnail %}
-               <a href="{{ SITEURL }}/{{ article.url }}" class="article-thumbnail article-thumbnail-1" style="background-image:url({{ article.thumbnail }})"><span class="header">{{ article.title }}</span></a>
+               <a href="{{ SITEURL }}/{{ article.url }}" class="article-thumbnail article-thumbnail-1" style="background-image:url(../{{ article.thumbnail }})"><span class="header">{{ article.title }}</span></a>
                {% endif %}
            </div>
         </div>
@@ -67,7 +67,7 @@
             {% if article.cover %}
             <a href="{{ SITEURL }}/{{ article.url }}" class="article-thumbnail article-thumbnail-2" style="background-image:url({{ article.cover }})"><span class="header">{{ article.title }}</span></a>
             {% elif article.thumbnail %}
-            <a href="{{ SITEURL }}/{{ article.url }}" class="article-thumbnail article-thumbnail-2" style="background-image:url({{ article.thumbnail }})"><span class="header">{{ article.title }}</span></a>
+            <a href="{{ SITEURL }}/{{ article.url }}" class="article-thumbnail article-thumbnail-2" style="background-image:url(../{{ article.thumbnail }})"><span class="header">{{ article.title }}</span></a>
             {% endif %}
 
             <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
@@ -104,7 +104,7 @@
             {% if article.cover %}
             <a href="{{ SITEURL }}/{{ article.url }}" class="article-thumbnail article-thumbnail-3" style="background-image:url({{ article.cover }})"><span class="header">{{ article.title }}</span></a>
             {% elif article.thumbnail %}
-            <a href="{{ SITEURL }}/{{ article.url }}" class="article-thumbnail article-thumbnail-3" style="background-image:url({{ article.thumbnail }})"><span class="header">{{ article.title }}</span></a>
+            <a href="{{ SITEURL }}/{{ article.url }}" class="article-thumbnail article-thumbnail-3" style="background-image:url(../{{ article.thumbnail }})"><span class="header">{{ article.title }}</span></a>
             {% endif %}
 
             <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>

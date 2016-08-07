@@ -1,7 +1,7 @@
 Title: HoneyGIS
 Category: Web Tools
 Date: 2013-01-01
-Thumbnail: /images/honeygis.png
+Thumbnail: images/honeygis.png
 SubTitle: Point data to honeycomb maps
 Tags: Leaflet, Prototype, WebApp
 
