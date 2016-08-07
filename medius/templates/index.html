@@ -46,7 +46,9 @@
             {% include "pagination.html" %}
 
             <footer class="index-footer">
-
+                {% for icon, link in LINKS %}
+                <a href="{{ link }}" target="_blank"><i class="fa fa-{{ icon }} fa-2x"></i></a>
+                {% endfor %}
                 <a href="{{ SITEURL }}/" title="{{ SITENAME|striptags }}">{{ SITENAME }}</a>
                 {% for title, link in MENUITEMS %}
                 <a href="{{ link }}">{{ title }}</a></li>
@@ -61,9 +63,6 @@
                 <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
                 {% endfor %}
                 {% endif %}
-                {% for title, link in LINKS %}
-                <a href="{{ link }}">{{ title }}</a>
-                {% endfor %}
 
             </footer>
 

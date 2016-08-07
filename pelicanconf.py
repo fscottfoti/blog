@@ -23,11 +23,8 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('GitHub', 'http://github.com/fscottfoti'))
-
-# Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+LINKS = (('github-square', 'https://github.com/fscottfoti'),
+         ('twitter-square', 'https://twitter.com/fscottfoti'),)
 
 DEFAULT_PAGINATION = 10
 
@@ -36,7 +33,6 @@ DEFAULT_PAGINATION = 10
 
 DISPLAY_CATEGORIES_ON_MENU = True
 DISPLAY_PAGES_ON_MENU = True
-
 
 MEDIUS_CATEGORIES = {
     'Web Tools': {
