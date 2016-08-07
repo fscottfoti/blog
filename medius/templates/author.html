@@ -6,7 +6,7 @@
     {% if MEDIUS_AUTHORS.get(author|string).cover %}
     <div class="cover" style="background-image: url({{ MEDIUS_AUTHORS.get(author|string).cover }})"></div>
     {% endif %}
-    <div class="avatar{% if not MEDIUS_AUTHORS.get(author|string).cover %}-no-cover{% endif %}"><img src="{{ MEDIUS_AUTHORS.get(author|string).image}}" alt="{{ author|striptags }}"></div>
+    <div class="avatar{% if not MEDIUS_AUTHORS.get(author|string).cover %}-no-cover{% endif %}"><img style="height:150px; margin-left:-15px;" src="{{ MEDIUS_AUTHORS.get(author|string).image}}" alt="{{ author|striptags }}"></div>
     <div class="author-profile">
         <h1>{{ author }}</h1>
         <p class="author-description">
@@ -47,7 +47,7 @@
             </div>
         </div>
         {% if article.thumbnail %}
-        <a href="{{ SITEURL }}/{{ article.url }}"><img src="{{ article.thumbnail }}" alt="{{ article.title|striptags }}" class="post-image"/></a>
+        <a href="{{ SITEURL }}/{{ article.url }}"><img src="../{{ article.thumbnail }}" alt="{{ article.title|striptags }}" class="post-image"/></a>
         {% endif %}
         <h2><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
         <div class="post-content">

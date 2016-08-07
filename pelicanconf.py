@@ -4,11 +4,12 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Fletcher Foti'
 SITENAME = u'OaklandAnalytics'
-SITEURL = ''
+SITEURL = 'http://localhost:8000'
 
 THEME="./medius"
 
 PATH = 'content'
+STATIC_PATHS = ['images']
 
 TIMEZONE = 'US/Pacific'
 
@@ -39,23 +40,27 @@ DISPLAY_PAGES_ON_MENU = True
 
 
 MEDIUS_CATEGORIES = {
-    'Category': {
-        'description': 'A galaxy is a gravitationally bound system of stars, stellar remnants, interstellar gas and dust, and dark matter.',
-        #'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/GalacticRotation2.svg/250px-GalacticRotation2.svg.png',
-        'thumbnail': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/NGC_3923_Elliptical_Shell_Galaxy.jpg/220px-NGC_3923_Elliptical_Shell_Galaxy.jpg'
+    'Web Tools': {
+        'description': 'Ways to understand cities via interactive websites.',
+        'thumbnail': SITEURL + '/images/webcities.jpg'
     }
 }
 
 
 MEDIUS_AUTHORS = {
-    'Onur Aslan': {
+    'Fletcher Foti': {
         'description': """
-            And where does the newborn go from here? The net is vast and infinite.
+            PhD in City Planning from Berkeley, now modeling for the Bay Area regional gov't and making web apps to build better cities.
         """,
-        'cover': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Milky_Way_Arch.jpg/1920px-Milky_Way_Arch.jpg',
-        'image': 'https://lh6.googleusercontent.com/-zEMaXmWAhdI/AAAAAAAAAAI/AAAAAAAAAAA/eVdgsm3TIDU/s128-c-k/photo.jpg',
-        'links': (('github-square', 'https://github.com/onuraslan'),
-                  ('twitter-square', 'https://twitter.com/oasln'),
-                  ('envelope-square', '#')),
+        'cover': SITEURL + '/images/montreal.jpg',
+        'image': SITEURL + '/images/ffoti.png',
+        'links': (('github-square', 'https://github.com/fscottfoti'),
+                  ('twitter-square', 'https://twitter.com/fscottfoti'),
+                  ('envelope-square', 'mailto:oaklandanalytics@gmail.com')),
     }
+}
+
+
+EXTRA_PATH_METADATA = {
+    'images/favicon.ico': {'path': 'favicon.ico'}
 }
