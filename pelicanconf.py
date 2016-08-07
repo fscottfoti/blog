@@ -23,8 +23,7 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Homepage', 'http://fletcherfoti.com/'),
-         ('You can modify those links in your config file', '#'),)
+LINKS = (('GitHub', 'http://github.com/fscottfoti'))
 
 # Social widget
 SOCIAL = (('You can add links in your config file', '#'),
