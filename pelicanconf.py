@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = u'Fletcher Foti'
 SITENAME = u'OaklandAnalytics'
 SITEURL = 'http://localhost:8000'
-SITEURL = "https://fscottfoti.github.io/blog"
+# SITEURL = "https://fscottfoti.github.io/blog"
 
 THEME="./medius"
 
@@ -25,7 +25,8 @@ AUTHOR_FEED_RSS = None
 
 # Blogroll
 LINKS = (('github-square', 'https://github.com/fscottfoti'),
-         ('twitter-square', 'https://twitter.com/fscottfoti'),)
+         ('twitter-square', 'https://twitter.com/fscottfoti'),
+         ('linkedin-square', 'https://linkedin.com/in/fletcherfoti'),)
 
 DEFAULT_PAGINATION = 10
 
@@ -52,7 +53,8 @@ MEDIUS_AUTHORS = {
         'image': SITEURL + '/images/ffoti.png',
         'links': (('github-square', 'https://github.com/fscottfoti'),
                   ('twitter-square', 'https://twitter.com/fscottfoti'),
-                  ('envelope-square', 'mailto:oaklandanalytics@gmail.com')),
+                  ('linkedin-square', 'https://linkedin.com/in/fletcherfoti'),
+                  ('envelope-square', 'mailto:oaklandanalytics@gmail.com'),),
     }
 }
 
