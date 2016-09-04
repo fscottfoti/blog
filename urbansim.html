@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>UrbanSim</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="http://localhost:8000/theme/css/main.css" />
+</head>
+<body>
+
+    <div class="main-nav-container">
+
+        <div class="pure-g">
+            <div class="pure-u-1 pure-u-lg-2-3">
+                <div class="main-nav">
+                    <ul class="main-nav-list">
+                        <li class="main-nav-item"><a href="http://localhost:8000/" class="pure-menu-link">OaklandAnalytics</a></li>
+
+                        <li class="main-nav-item"><a href="http://localhost:8000/pages/about.html" class="pure-menu-link">About</a></li>
+                        <li class="main-nav-item"><a href="http://localhost:8000/pages/vitae.html" class="pure-menu-link">Vitae</a></li>
+                        <li class="main-nav-item"><a href="http://localhost:8000/category/non-mathy.html" class="pure-menu-link">Non-mathy</a></li>
+                        <li class="main-nav-item active"><a href="http://localhost:8000/category/urbansim.html" class="pure-menu-link">urbansim</a></li>
+                        <li class="main-nav-item"><a href="http://localhost:8000/category/web-tools.html" class="pure-menu-link">Web Tools</a></li>
+                    </ul>
+                </div>
+             </div>
+
+             <div class="pure-u-1 pure-u-lg-1-3"></div>
+        </div>
+
+    </div>
+
+
+<div class="page-container">
+    <div class="entry-content">
+        <div class="post-meta pure-g">
+            <div class="pure-u-3-4 meta-data">
+                <a href="http://localhost:8000/category/urbansim.html" class="category">urbansim</a><br />
+
+                <a class="author" href="http://localhost:8000/author/fletcher-foti.html">Fletcher Foti</a>
+                &mdash; <abbr title="2016-09-02T00:00:00-07:00">Fri 02 September 2016</abbr>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-header-container">
+        <div class="background-image-container">
+
+            <div class="background-image-small">
+                <img src="images/urbansim.jpg" alt="UrbanSim">
+                <div class="title-container">
+                    <h1>UrbanSim</h1>
+                    <h4>A little history of UrbanSim, Synthicity, and our Autodesk adventure</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="entry-content">
+        <p>The next few blog posts are going to be about projects from the past couple of years.  Yes, I'm way behind in documenting a few very important projects, but better late than never.</p>
+<h2>UrbanSim the Repo</h2>
+<p>For starters, let's discuss the new version of <a href="http://github.com/udst/urbansim">UrbanSim</a>.  The first commit was done by me in August of 2013, and was part of some consulting work being done through the firm Synthicity.  At the time it seemed like the circa 2003 version of UrbanSim (called OPUS) was overkill for a more simple analysis, and the nascent Pandas library was perhaps replacing a big part of the original infrastructure.  </p>
+<p>This turned out to be a good call as Pandas exploded on to the scene over the next couple of years after that, and hooking the project to Pandas seems obvious in retrospect.</p>
+<p>The bulk of the code in the repo at this time was written by Matt Davis (@jiffyclub on GitHub) who currently works at Clover Health.  The UrbanSim repo contains modules that still almost perfectly follow the methodology written by Paul Waddell (my PhD advisor at Berkeley) in the excellent <a href="http://astro.temple.edu/~jmennis/Courses/GUS_0150/readings/Waddell02.pdf">2002 paper</a>.  Matt put together modules for hedonics, location choice models (which required an MNL module), and transition models.</p>
+<p>We chose to configure the statistical models with a pretty simple YAML syntax, and the transition models are controlled by CSV inputs as they always were in OPUS.  UrbanSim also has a few modules written by me: mainly Pandana, the DataFrame Explorer and the ProForma and Developer modules, and I will cover these in other blog posts.</p>
+<h2>Synthicity the Startup</h2>
+<p>This post is intended to be a personal history as much as a technical one, and I think fondly of the long days coding on the 3rd floor above Telegraph Ave in Berkeley.  With street people near Amoeba music keeping us almost constantly distracted, and the outdoor deck of Cafe Durant serving for many a "pivot," the office was a much a lab as a startup.  I made some great friends in those days and I wish them all well in their future endeavors.  More than a few are still related to this project in some fashion.</p>
+<p>We started to get more serious in 2014, if I have my dates correct, as we took a class with Steve Blank in the business school at Berkeley (the Lean Launchpad) and became Entrepreneurs in Residence in the San Francisco Planning Department.  Carlos, Fede, and Jason worked diligently on the UrbanCanvas city-scale planning support tool (for lack of a better term), and sometime around May Justin Lokitz from Autodesk came to get a demo.</p>
+<p>Take this an opinion of just one person, but my read is that Autodesk was completely comfordable with the combination of simulation on the cloud with a 3D desktop GUI for designing cities.  More than a few of their products followed this model, and certainly Infraworks was headed in this direction, although Infraworks was more of an engineer's tool than a planner's.</p>
+    </div>
+
+    <footer>
+        <div class="pure-g post-footer">
+            <div class="pure-u-1 pure-u-md-1-2">
+                <div class="pure-g poster-info">
+                    <div class="pure-u">
+                        <img src="http://localhost:8000/images/ffoti.png" alt="">
+                    </div>
+                    <div class="pure-u-3-4">
+                        <h3 class="author-name"><a href="http://localhost:8000/author/fletcher-foti.html">Fletcher Foti</a></h3>
+                        <p class="author-description">
+                          
+            PhD in City Planning from Berkeley, now modeling for the Bay Area regional gov't and making web apps to build better cities.
+        
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </footer>
+
+
+</div>
+
+
+</body>
+</html>
