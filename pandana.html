@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Pandana</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="http://oaklandanalytics.com/theme/css/main.css" />
+</head>
+<body>
+
+    <div class="main-nav-container">
+
+        <div class="pure-g">
+            <div class="pure-u-1 pure-u-lg-2-3">
+                <div class="main-nav">
+                    <ul class="main-nav-list">
+                        <li class="main-nav-item"><a href="http://oaklandanalytics.com/" class="pure-menu-link">OaklandAnalytics</a></li>
+
+                        <li class="main-nav-item"><a href="http://oaklandanalytics.com/pages/about.html" class="pure-menu-link">About</a></li>
+                        <li class="main-nav-item"><a href="http://oaklandanalytics.com/pages/vitae.html" class="pure-menu-link">Vitae</a></li>
+                        <li class="main-nav-item"><a href="http://oaklandanalytics.com/category/non-mathy.html" class="pure-menu-link">Non-mathy</a></li>
+                        <li class="main-nav-item active"><a href="http://oaklandanalytics.com/category/urbansim.html" class="pure-menu-link">urbansim</a></li>
+                        <li class="main-nav-item"><a href="http://oaklandanalytics.com/category/web-tools.html" class="pure-menu-link">Web Tools</a></li>
+                    </ul>
+                </div>
+             </div>
+
+             <div class="pure-u-1 pure-u-lg-1-3"></div>
+        </div>
+
+    </div>
+
+
+<div class="page-container">
+    <div class="entry-content">
+        <div class="post-meta pure-g">
+            <div class="pure-u-3-4 meta-data">
+                <a href="http://oaklandanalytics.com/category/urbansim.html" class="category">urbansim</a><br />
+
+                <a class="author" href="http://oaklandanalytics.com/author/fletcher-foti.html">Fletcher Foti</a>
+                &mdash; <abbr title="2016-09-05T00:00:00-07:00">Mon 05 September 2016</abbr>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-header-container">
+        <div class="background-image-container">
+
+            <div class="background-image-small">
+                <img src="images/pandana.png" alt="Pandana">
+                <div class="title-container">
+                    <h1>Pandana</h1>
+                    <h4>A Python/Pandas library for data aggregations on a network</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="entry-content">
+        <p><em>Pandana was created as part of my <a href="http://gradworks.umi.com/36/40/3640431.html">dissertation</a> which is work done with Paul Waddell as advisor.  Most of the polish of the library was done by Matt Davis (@jiffyclub) for work done at Synthicity.</em></p>
+<p><a href="https://github.com/UDST/pandana">Pandana</a> is a neoligism for Pandas Network Analysis, which follows somewhat the kinds of functionality provided in ESRI's network analyst, but with a Pandas-style interface.  Basically, the user of the library can do aggregations along the network of any kind of spatially located data.</p>
+<p>For instance, once you've inititalized the network, you can set data in relation to that network, like the income of all people in a city.  You can then do buffers around each street intersection in the network and do any kind of aggregation, e.g. the 70th percentile income within 3kms, or the sum of jobs within 45 minutes ride via transit (assuming you have a network of transit lines).</p>
+<p>The real power of this approach is twofold.</p>
+<ul>
+<li>
+<p>The core algorithms are written in C and multithreaded so the results are a fast as they can possibly be.  Any reasonable walking scale aggreagtion will be sub-second for a region as large as the Bay Area.</p>
+</li>
+<li>
+<p>The API is Pandas based and so shockingly easy to use (this has been confirmed by multiple users).  Pass in a DataFrame with a data point, an X, and a Y, and get back a DataFrame with a network node id and a value for the aggregation around that node.  That's it.</p>
+</li>
+</ul>
+<p>It's worth mentioning there are two modes of operation.  The one described above, which aggregates data, and the second, with is the Nth nearest point (a network nearest neighbor), such as can be used to construct a customized WalkScore-type algorithm.</p>
+<p>Pandana is currently in active use by multiple MPOs.  If you are one of these MPOs and have a good example to post, send it to me and I will update this blog post.</p>
+<p>Credits and resources:</p>
+<ul>
+<li>
+<p>Conor Henley gets full credit for thinking of the name.  Clearly Pandana is also a reference to Panda bears <a href="https://www.google.com/search?q=pandana&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=0ahUKEwjrgvGIyvjOAhVGl5QKHf7iBj4Q_AUICCgB&amp;biw=1009&amp;bih=727">wearing bandanas</a>.</p>
+</li>
+<li>
+<p>For basic examples (done by me) see this <a href="https://github.com/fscottfoti/pandana_presentation">repo</a>.  A trivial example is <a href="https://github.com/fscottfoti/pandana_presentation/blob/master/Three%20City%20Example.ipynb">here</a>.  A full-sized example is <a href="https://github.com/fscottfoti/pandana_presentation/blob/master/FullExample.ipynb">here</a>.  An example of how to create a custom WalkScore is <a href="https://github.com/fscottfoti/pandana_presentation/blob/master/AnythingScore.ipynb">here</a>.</p>
+</li>
+<li>
+<p>Geoff Boeing has a wonderful example / blog post of how to use Pandana, which is <a href="http://geoffboeing.com/2016/07/visualize-urban-accessibility-walkability/">here</a>.</p>
+</li>
+<li>
+<p>Eli Knaap uses Pandana in his great accessibility to opportunities <a href="http://knaaptime.com/maps/mdot/index.html">work</a> in Baltimore.</p>
+</li>
+</ul>
+    </div>
+
+    <footer>
+        <div class="pure-g post-footer">
+            <div class="pure-u-1 pure-u-md-1-2">
+                <div class="pure-g poster-info">
+                    <div class="pure-u">
+                        <img src="http://oaklandanalytics.com/images/ffoti.png" alt="">
+                    </div>
+                    <div class="pure-u-3-4">
+                        <h3 class="author-name"><a href="http://oaklandanalytics.com/author/fletcher-foti.html">Fletcher Foti</a></h3>
+                        <p class="author-description">
+                          
+            PhD in City Planning from Berkeley, now modeling for the Bay Area regional gov't and making web apps to build better cities.
+        
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </footer>
+
+
+</div>
+
+
+</body>
+</html>
