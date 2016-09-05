@@ -26,6 +26,6 @@ Take this as an opinion of just one person, but my read is that Autodesk was com
 
 I stayed on for only the first 6 months of working at Autodesk, as for me I prefer the lab or startup feel of an organization to protecting the value of the shares of a publicly traded company.  Autodesk seemed about as non-evil a large corportation as can exist on Wall Street, I just can't go to work on the dark side of a skyscraper and discuss sales all the time.  I went to work for MTC in July, essentially to continue my UrbanSim work and get them through the next Plan.
 
-I wasn't privy to what happened next, but suffice it to say that Synthicity was spun back out of Autodesk in the spring of 2016 into UrbanSim Inc, with a renewed focus on regional modeling. I can guess that Autodesk did this because Synthicity was probably not a mature enough company to scale inside Autodesk's machine.  Nonetheless, the idea is still out there and I wish all the luck to the folks at UrbanSim Inc.
+I wasn't privy to what happened next, but suffice it to say that Synthicity was spun back out of Autodesk in the spring of 2016 into UrbanSim Inc, with a renewed focus on regional modeling. Hopefully they make some good progress over the next couple of years and I wish all the luck to the folks at UrbanSim Inc.
 
 *To learn more about the Pandas-based UrbanSim implementation see this [paper](https://journal2.osgeo.org/index.php/journal/article/download/223/189).*
