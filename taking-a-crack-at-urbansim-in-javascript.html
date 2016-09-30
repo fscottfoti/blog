@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Taking a Crack at UrbanSim in Javascript</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="http://oaklandanalytics.com/theme/css/main.css" />
+</head>
+<body>
+
+    <div class="main-nav-container">
+
+        <div class="pure-g">
+            <div class="pure-u-1 pure-u-lg-2-3">
+                <div class="main-nav">
+                    <ul class="main-nav-list">
+                        <li class="main-nav-item"><a href="http://oaklandanalytics.com/" class="pure-menu-link">OaklandAnalytics</a></li>
+
+                        <li class="main-nav-item"><a href="http://oaklandanalytics.com/pages/about.html" class="pure-menu-link">About</a></li>
+                        <li class="main-nav-item"><a href="http://oaklandanalytics.com/pages/vitae.html" class="pure-menu-link">Vitae</a></li>
+                        <li class="main-nav-item"><a href="http://oaklandanalytics.com/category/non-mathy.html" class="pure-menu-link">Non-mathy</a></li>
+                        <li class="main-nav-item active"><a href="http://oaklandanalytics.com/category/urbansim.html" class="pure-menu-link">urbansim</a></li>
+                        <li class="main-nav-item"><a href="http://oaklandanalytics.com/category/web-tools.html" class="pure-menu-link">Web Tools</a></li>
+                    </ul>
+                </div>
+             </div>
+
+             <div class="pure-u-1 pure-u-lg-1-3"></div>
+        </div>
+
+    </div>
+
+
+<div class="page-container">
+    <div class="entry-content">
+        <div class="post-meta pure-g">
+            <div class="pure-u-3-4 meta-data">
+                <a href="http://oaklandanalytics.com/category/urbansim.html" class="category">urbansim</a><br />
+
+                <a class="author" href="http://oaklandanalytics.com/author/fletcher-foti.html">Fletcher Foti</a>
+                &mdash; <abbr title="2016-09-30T00:00:00-07:00">Fri 30 September 2016</abbr>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-header-container">
+        <div class="background-image-container">
+
+            <div class="background-image-small">
+                <img src="images/simjs.png" alt="Taking a Crack at UrbanSim in Javascript">
+                <div class="title-container">
+                    <h1>Taking a Crack at UrbanSim in Javascript</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="entry-content">
+        <p>One of my biggest beefs about doing urban modeling in Python and Pandas is when the specific modeling task doesn't map well to a vectorized operation.  Since Python performance degrades significantly over simple for loops - see <a href="http://stackoverflow.com/questions/8097408/why-python-is-so-slow-for-a-simple-for-loop">this</a> for more info - simple code sections inside of a loop that runs a million times can take an order of magnitude or more to run in Python than other languages.</p>
+<p>Interestingly, JavaScript does not suffer from this problem, and since everyone has a JavaScript environment already installed - their web browser - there are disctinct advantages to coding in Javascript.  About a year ago I spent a few hours writing up a few simple UrbanSim models in Javascript to see what it might look like, and the results are available <a href="https://github.com/oaklandanalytics/sim.js">here</a>.</p>
+<p>Javascript, combined with a simple utility library like Underscore or Lodash, begins to look more like Python.  For the actual data analysis I used the popular (for visualization mainly) d3 library.  Most variables were aggregations at the TAZ level which d3 does a little <a href="https://github.com/oaklandanalytics/sim.js/blob/a0981d4d1a175785ed8e45fa98f56f92c58dda85/sim.js#L112">awkwardly</a> compared to Pandas.  There are a few Javascript libraries which attempt to mimic Pandas more <a href="https://github.com/data-forge/data-forge-js">closely</a>, but none of them seem to have the userbase yet to use in big projects.</p>
+<p>I then took the actual specification from the Bay Area UrbanSim and attempted to copy the residential hedonic, which can be seen <a href="https://github.com/oaklandanalytics/sim.js/blob/a0981d4d1a175785ed8e45fa98f56f92c58dda85/sim.js#L193">here</a>.  This does simulation but not estimation.  It seems to me that for a use case like this, you'd estimate in your preferred language, save the coefficients, and copy the model into Javascript.  Kind of painful but not too bad.  There are also <a href="https://github.com/simple-statistics/simple-statistics">libraries</a> which can do regression in Javascript, but I don't know of any libraries to do choice models in Javascript though it seems entirely plausible.</p>
+<p>The real win comes when you run the developer pro formas in a non-vectorized form (no <a href="https://github.com/UDST/urbansim/blob/master/urbansim/developer/sqftproforma.py#L629!">arg maxes</a> which looks like <a href="https://github.com/oaklandanalytics/sim.js/blob/a0981d4d1a175785ed8e45fa98f56f92c58dda85/sim.js#L319">this</a>.  This to me is the natural way a pro forma should look for these kinds of models.</p>
+<p>This was just a proof of concept which shows promise, but in the end the power and breadth of Python and Pandas still takes the day for me for most use cases.  Running simpler analysis in the browser seems utterly feasible (no pun intended) though, and future blog posts will continue exploring this topic.</p>
+    </div>
+
+    <footer>
+        <div class="tags">
+            <a href="http://oaklandanalytics.com/tag/urbansim.html">urbansim</a>
+        </div>
+        <div class="pure-g post-footer">
+            <div class="pure-u-1 pure-u-md-1-2">
+                <div class="pure-g poster-info">
+                    <div class="pure-u">
+                        <img src="http://oaklandanalytics.com/images/ffoti.png" alt="">
+                    </div>
+                    <div class="pure-u-3-4">
+                        <h3 class="author-name"><a href="http://oaklandanalytics.com/author/fletcher-foti.html">Fletcher Foti</a></h3>
+                        <p class="author-description">
+                          
+            PhD in City Planning from Berkeley, now modeling for the Bay Area regional gov't and making web apps to build better cities.
+        
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </footer>
+
+
+</div>
+
+
+</body>
+</html>
